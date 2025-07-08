@@ -1,103 +1,244 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ArrowRight, MapPin, Users, BarChart3, Target } from "lucide-react"
+import Link from "next/link"
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      {/* Header */}
+      <header className="border-b bg-white/80 backdrop-blur-sm">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="flex items-center space-x-2">
+            <MapPin className="h-8 w-8 text-blue-600" />
+            <h1 className="text-2xl font-bold text-gray-900">NeighborFit</h1>
+          </div>
+          <nav className="flex space-x-6">
+            <Link href="/methodology" className="text-gray-600 hover:text-gray-900">
+              Methodology
+            </Link>
+            <Link href="/data" className="text-gray-600 hover:text-gray-900">
+              Data Sources
+            </Link>
+            <Link href="/about" className="text-gray-600 hover:text-gray-900">
+              About
+            </Link>
+          </nav>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Hero Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-5xl font-bold text-gray-900 mb-6">Find Your Perfect Neighborhood Match</h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Using data-driven analysis and algorithmic matching, NeighborFit helps you discover neighborhoods that align
+            with your lifestyle preferences, budget, and priorities.
+          </p>
+          <Link href="/assessment">
+            <Button size="lg" className="text-lg px-8 py-4">
+              Start Your Assessment
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Problem Statement */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-center mb-12">The Neighborhood Matching Problem</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <Target className="mr-2 h-5 w-5 text-red-500" />
+                    The Challenge
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">
+                    Finding the right neighborhood is complex and subjective. Traditional approaches rely on limited
+                    criteria like price and location, missing crucial lifestyle factors that determine long-term
+                    satisfaction and community fit.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <BarChart3 className="mr-2 h-5 w-5 text-green-500" />
+                    Our Solution
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">
+                    A data-driven matching algorithm that considers multiple dimensions: walkability, demographics,
+                    amenities, transportation, safety, and cultural fit to provide personalized neighborhood
+                    recommendations.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h3 className="text-3xl font-bold text-center mb-12">How NeighborFit Works</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Users className="mr-2 h-5 w-5 text-blue-500" />
+                  Lifestyle Assessment
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Complete a comprehensive assessment covering your preferences for commute, nightlife, family
+                  amenities, outdoor activities, and community characteristics.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <BarChart3 className="mr-2 h-5 w-5 text-green-500" />
+                  Data Analysis
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Our algorithm processes real neighborhood data including demographics, walkability scores, crime
+                  statistics, and amenity density to create comprehensive profiles.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <MapPin className="mr-2 h-5 w-5 text-purple-500" />
+                  Smart Matching
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Receive ranked neighborhood recommendations with detailed explanations of why each area matches your
+                  preferences and lifestyle requirements.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-blue-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-3xl font-bold mb-6">Ready to Find Your Perfect Neighborhood?</h3>
+          <p className="text-xl mb-8 opacity-90">
+            Join thousands of users who have discovered their ideal community through data-driven matching.
+          </p>
+          <Link href="/assessment">
+            <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
+              Take the Assessment
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <MapPin className="h-6 w-6 text-blue-400" />
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  NeighborFit
+                </span>
+              </div>
+              <p className="text-gray-300">Data-driven neighborhood matching for better living decisions.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4 text-blue-300">Product</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <Link href="/assessment" className="hover:text-blue-400 transition-colors">
+                    Assessment
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/methodology" className="hover:text-blue-400 transition-colors">
+                    Methodology
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/data" className="hover:text-blue-400 transition-colors">
+                    Data Sources
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4 text-green-300">Research</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <Link href="/research" className="hover:text-green-400 transition-colors">
+                    User Research
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/algorithm" className="hover:text-green-400 transition-colors">
+                    Algorithm Design
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/validation" className="hover:text-green-400 transition-colors">
+                    Validation Results
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4 text-purple-300">Project</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <Link href="/about" className="hover:text-purple-400 transition-colors">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-purple-400 transition-colors"
+                  >
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <Link href="/documentation" className="hover:text-purple-400 transition-colors">
+                    Documentation
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p className="text-gray-300">
+              &copy; 2025 NeighborFit by <span className="text-blue-400 font-semibold">Awal Manga</span>. Built for
+              academic research and demonstration.
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
