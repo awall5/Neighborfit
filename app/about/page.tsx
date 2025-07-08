@@ -81,7 +81,7 @@ export default function AboutPage() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Lightbulb className="mr-2 h-6 w-6 text-yellow-500" />
-                The Problem We're Solving
+                The Problem We&apos;re Solving
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -99,9 +99,9 @@ export default function AboutPage() {
               <div>
                 <h4 className="font-semibold mb-2">Our Hypothesis</h4>
                 <p className="text-gray-700 bg-gray-50 p-4 rounded-lg italic">
-                  "A data-driven, multi-dimensional matching algorithm that considers lifestyle preferences, demographic
+                  &quot;A data-driven, multi-dimensional matching algorithm that considers lifestyle preferences, demographic
                   alignment, amenity accessibility, and transportation patterns can significantly improve neighborhood
-                  selection outcomes and user satisfaction compared to traditional price-and-location-only approaches."
+                  selection outcomes and user satisfaction compared to traditional price-and-location-only approaches.&quot;
                 </p>
               </div>
             </CardContent>

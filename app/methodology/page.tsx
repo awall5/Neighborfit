@@ -287,7 +287,7 @@ Where:
                   <div>
                     <h5 className="font-medium">Subjective Metric Quantification</h5>
                     <p className="text-sm text-gray-700">
-                      Converted qualitative assessments (e.g., "family-friendly") into quantitative scores using
+                      Converted qualitative assessments (e.g., &quot;family-friendly&quot;) into quantitative scores using
                       composite indices and validation against user feedback.
                     </p>
                   </div>

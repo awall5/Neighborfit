@@ -107,10 +107,21 @@ const mockResults: NeighborhoodMatch[] = [
   },
 ]
 
+type AssessmentData = {
+  budget: number[];
+  commute: string;
+  lifestyle: string[];
+  priorities: Record<string, number[]>;
+}
+
+
 export default function ResultsPage() {
   const [results, setResults] = useState<NeighborhoodMatch[]>([])
   const [loading, setLoading] = useState(true)
-  const [assessmentData, setAssessmentData] = useState<any>(null)
+  const [assessmentData, setAssessmentData] = useState<AssessmentData | null>(null)
+
+
+
 
   useEffect(() => {
     // Load assessment data from localStorage
@@ -168,7 +179,7 @@ export default function ResultsPage() {
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Your Neighborhood Matches</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Based on your preferences, we've found {results.length} neighborhoods that could be perfect for your
+            Based on your preferences, we&apos;ve found {results.length} neighborhoods that could be perfect for your
             lifestyle.
           </p>
         </div>

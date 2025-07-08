@@ -133,7 +133,7 @@ export default function AssessmentPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Budget & Basic Information</CardTitle>
-                <CardDescription>Let's start with your housing budget and basic preferences</CardDescription>
+                <CardDescription>Let&apos;s start with your housing budget and basic preferences</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
